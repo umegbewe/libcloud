@@ -403,6 +403,11 @@ def generate_providers_table(api):
             if method_name == "deploy_node":
                 features = getattr(cls, "features", {}).get("create_node", [])
                 is_implemented = len(features) >= 1
+            elif method_name == "import_key_pair_from_file":
+                is_implemented = (
+                    driver_methods[method_name] != base_method
+                    or result[name]["methods"]["import_key_pair_from_string"]
+                )
             else:
                 if method_name not in driver_methods:
                     is_implemented = False

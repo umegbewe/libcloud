@@ -22,7 +22,7 @@ Provider                       list key pairs get key pair create key pair impor
 `Google Compute Engine`_       no             no           no              no                            no                          no             
 `GiG G8 Node Provider`_        no             no           no              no                            no                          no             
 `Gridscale`_                   yes            no           no              yes                           no                          no             
-`Hetzner Cloud`_               yes            yes          no              yes                           no                          yes
+`Hetzner Cloud`_               yes            yes          no              yes                           yes                         yes
 `Ikoula`_                      yes            yes          yes             yes                           no                          yes            
 `InternetSolutions`_           no             no           no              no                            no                          no             
 `Kamatera`_                    no             no           no              no                            no                          no             

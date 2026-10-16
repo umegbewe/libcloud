@@ -1,5 +1,5 @@
 Hetzner Cloud Compute Driver
-===========================
+============================
 
 The Hetzner Cloud driver manages cloud servers using the `Hetzner Cloud API`_.
 It supports listing, creating, starting, stopping, rebooting, and deleting
@@ -38,6 +38,8 @@ With ``deploy_node``, ``auth=NodeAuthPassword(...)`` supplies an existing SSH
 password for deployment. It does not set that password on the server. For SSH
 key authentication, use ``ex_ssh_keys`` to select the keys to inject and
 ``ssh_key`` to supply the corresponding private key file to ``deploy_node``.
+Use SSH keys for automated deployment: Hetzner requires a generated root
+password to be changed on first login.
 
 ``create_node`` also accepts ``ex_user_data`` for cloud-init configuration,
 ``ex_labels`` for labels, ``ex_networks`` for private network IDs, and

@@ -137,6 +137,19 @@ class HetznerNodeDriver(NodeDriver):
         """
         Create and start a server.
 
+        :param name: Server hostname, unique within the project.
+        :type name: ``str``
+        :param size: Server type to create.
+        :type size: :class:`~libcloud.compute.base.NodeSize`
+        :param image: Image to boot from.
+        :type image: :class:`~libcloud.compute.base.NodeImage`
+        :param location: Location to create the server in, or ``None`` to let
+            Hetzner select a location.
+        :type location: :class:`~libcloud.compute.base.NodeLocation` or ``None``
+        :param auth: Accepted for deployment compatibility; does not configure
+            server credentials.
+        :type auth: :class:`~libcloud.compute.base.NodeAuthPassword` or
+            :class:`~libcloud.compute.base.NodeAuthSSHKey` or ``None``
         :param ex_ssh_keys: Existing SSH key names, IDs, or ``KeyPair`` objects.
         :type ex_ssh_keys: ``list``
         :param ex_user_data: Cloud-init configuration (at most 32 KiB).
@@ -148,6 +161,8 @@ class HetznerNodeDriver(NodeDriver):
         :param ex_public_net: Public network options, such as
             ``{'enable_ipv4': False, 'enable_ipv6': True}``.
         :type ex_public_net: ``dict``
+        :return: The newly created server, which may still be initializing.
+        :rtype: :class:`~libcloud.compute.base.Node`
 
         Import public keys with ``import_key_pair_from_string`` and pass them
         in ``ex_ssh_keys``. The ``auth`` argument is accepted for compatibility
@@ -192,11 +207,6 @@ class HetznerNodeDriver(NodeDriver):
         response = self.connection.request("/v1/servers/%s" % node.id, method="DELETE")
         return response.status == httplib.OK
 
-    def ex_get_node(self, node_id):
-        """Retrieve a server by ID."""
-        data = self.connection.request("/v1/servers/%s" % node_id).object
-        return self._to_node(data["server"])
-
     def list_volumes(self):
         """List all volumes in the project, including attached volumes."""
         return [self._to_volume(data) for data in self._list_resources("volumes")]
@@ -207,6 +217,17 @@ class HetznerNodeDriver(NodeDriver):
 
         ``location`` is required. Creating volumes from snapshots is unsupported.
         The returned volume may still be in the ``CREATING`` state.
+
+        :param size: Size in GB (10 to 10240).
+        :type size: ``int``
+        :param name: Volume name, unique within the project.
+        :type name: ``str``
+        :param location: Location to create the volume in (required).
+        :type location: :class:`~libcloud.compute.base.NodeLocation`
+        :param snapshot: Unsupported; must be ``None``.
+        :type snapshot: ``None``
+        :return: The newly created volume.
+        :rtype: :class:`~libcloud.compute.base.StorageVolume`
         """
         if snapshot is not None:
             raise NotImplementedError("Hetzner Cloud does not support volume snapshots")
@@ -222,6 +243,15 @@ class HetznerNodeDriver(NodeDriver):
 
         Hetzner assigns the device path, available in ``volume.extra['linux_device']``.
         ``device`` must be ``None``. Returns when the action is accepted.
+
+        :param node: Server to attach the volume to.
+        :type node: :class:`~libcloud.compute.base.Node`
+        :param volume: Volume to attach.
+        :type volume: :class:`~libcloud.compute.base.StorageVolume`
+        :param device: Unsupported; must be ``None``.
+        :type device: ``None``
+        :return: Whether the attachment action was accepted.
+        :rtype: ``bool``
         """
         if device is not None:
             raise ValueError("Hetzner Cloud assigns the volume device path automatically")
@@ -233,14 +263,28 @@ class HetznerNodeDriver(NodeDriver):
         return response.status == httplib.CREATED
 
     def detach_volume(self, volume):
-        """Detach a volume. Returns when the action is accepted."""
+        """
+        Detach a volume. Returns when the action is accepted.
+
+        :param volume: Volume to detach.
+        :type volume: :class:`~libcloud.compute.base.StorageVolume`
+        :return: Whether the detachment action was accepted.
+        :rtype: ``bool``
+        """
         response = self.connection.request(
             "/v1/volumes/%s/actions/detach" % volume.id, method="POST"
         )
         return response.status == httplib.CREATED
 
     def destroy_volume(self, volume):
-        """Delete an unattached volume without delete protection."""
+        """
+        Delete an unattached volume without delete protection.
+
+        :param volume: Volume to delete.
+        :type volume: :class:`~libcloud.compute.base.StorageVolume`
+        :return: Whether the volume was deleted.
+        :rtype: ``bool``
+        """
         response = self.connection.request("/v1/volumes/%s" % volume.id, method="DELETE")
         return response.status == httplib.NO_CONTENT
 
@@ -263,6 +307,18 @@ class HetznerNodeDriver(NodeDriver):
             "/v1/ssh_keys/%s" % key_pair.extra["id"], method="DELETE"
         )
         return response.status == httplib.NO_CONTENT
+
+    def ex_get_node(self, node_id):
+        """
+        Retrieve a server by ID.
+
+        :param node_id: Server ID.
+        :type node_id: ``str``
+        :return: The requested server.
+        :rtype: :class:`~libcloud.compute.base.Node`
+        """
+        data = self.connection.request("/v1/servers/%s" % node_id).object
+        return self._to_node(data["server"])
 
     def _node_action(self, node, action):
         response = self.connection.request(
