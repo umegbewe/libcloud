@@ -22,6 +22,7 @@ Provider                       list key pairs get key pair create key pair impor
 `Google Compute Engine`_       no             no           no              no                            no                          no             
 `GiG G8 Node Provider`_        no             no           no              no                            no                          no             
 `Gridscale`_                   yes            no           no              yes                           no                          no             
+`Hetzner Cloud`_               yes            yes          no              yes                           no                          yes
 `Ikoula`_                      yes            yes          yes             yes                           no                          yes            
 `InternetSolutions`_           no             no           no              no                            no                          no             
 `Kamatera`_                    no             no           no              no                            no                          no             
@@ -72,6 +73,7 @@ Provider                       list key pairs get key pair create key pair impor
 .. _`Google Compute Engine`: https://cloud.google.com/
 .. _`GiG G8 Node Provider`: https://gig.tech
 .. _`Gridscale`: https://gridscale.io
+.. _`Hetzner Cloud`: https://www.hetzner.com/cloud
 .. _`Ikoula`: http://express.ikoula.co.uk/cloudstack
 .. _`InternetSolutions`: http://www.is.co.za/
 .. _`Kamatera`: https://www.kamatera.com/

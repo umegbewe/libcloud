@@ -1,0 +1,17 @@
+{
+  "action": {
+    "id": 1,
+    "command": "detach_volume",
+    "status": "running",
+    "progress": 0,
+    "started": "2026-10-16T12:00:00Z",
+    "finished": null,
+    "resources": [
+      {
+        "id": 4711,
+        "type": "volume"
+      }
+    ],
+    "error": null
+  }
+}

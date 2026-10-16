@@ -1,0 +1,41 @@
+{
+  "images": [
+    {
+      "id": 1,
+      "type": "system",
+      "status": "available",
+      "name": "ubuntu-24.04",
+      "description": "Ubuntu 24.04",
+      "image_size": 2.3,
+      "disk_size": 10,
+      "created": "2016-01-30T23:55:00Z",
+      "created_from": null,
+      "bound_to": null,
+      "os_flavor": "ubuntu",
+      "os_version": "24.04",
+      "rapid_deploy": false,
+      "protection": {
+        "delete": false
+      },
+      "deprecated": null,
+      "deprecation": null,
+      "deleted": null,
+      "labels": {
+        "environment": "prod",
+        "example.com/my": "label",
+        "just-a-key": ""
+      },
+      "architecture": "x86"
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "per_page": 50,
+      "previous_page": null,
+      "next_page": null,
+      "last_page": 1,
+      "total_entries": 1
+    }
+  }
+}

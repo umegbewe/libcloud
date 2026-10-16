@@ -1,0 +1,146 @@
+{
+  "servers": [
+    {
+      "id": 42,
+      "name": "test-server",
+      "status": "running",
+      "created": "2016-01-30T23:55:00Z",
+      "public_net": {
+        "ipv4": {
+          "id": 1,
+          "ip": "192.0.2.1",
+          "blocked": false,
+          "dns_ptr": "server.example.com"
+        },
+        "ipv6": {
+          "id": 2,
+          "ip": "2001:db8::/64",
+          "blocked": false,
+          "dns_ptr": []
+        },
+        "floating_ips": [
+          478
+        ],
+        "firewalls": []
+      },
+      "private_net": [
+        {
+          "network": 4711,
+          "ip": "10.0.0.2",
+          "alias_ips": [
+            "10.0.0.3"
+          ],
+          "mac_address": "86:00:ff:2a:7d:e1"
+        }
+      ],
+      "server_type": {
+        "id": 1,
+        "name": "cpx22",
+        "description": "CPX22",
+        "cores": 2,
+        "memory": 4,
+        "disk": 80,
+        "deprecated": false,
+        "prices": [
+          {
+            "location": "fsn1",
+            "price_hourly": {
+              "net": "0.008",
+              "gross": "0.00952"
+            },
+            "price_monthly": {
+              "net": "5.0",
+              "gross": "5.95"
+            },
+            "included_traffic": 20000000000000,
+            "price_per_tb_traffic": {
+              "net": "1.0",
+              "gross": "1.19"
+            }
+          }
+        ],
+        "storage_type": "local",
+        "cpu_type": "shared",
+        "category": "Shared vCPU",
+        "architecture": "x86",
+        "deprecation": null,
+        "locations": [
+          {
+            "id": 1,
+            "name": "fsn1",
+            "deprecation": null,
+            "recommended": true,
+            "available": true
+          }
+        ]
+      },
+      "location": {
+        "id": 1,
+        "name": "fsn1",
+        "description": "Falkenstein DC Park 1",
+        "country": "DE",
+        "city": "Falkenstein",
+        "latitude": 50.47612,
+        "longitude": 12.370071,
+        "network_zone": "eu-central"
+      },
+      "image": {
+        "id": 1,
+        "type": "system",
+        "status": "available",
+        "name": "ubuntu-24.04",
+        "description": "Ubuntu 24.04",
+        "image_size": 2.3,
+        "disk_size": 10,
+        "created": "2016-01-30T23:55:00Z",
+        "created_from": null,
+        "bound_to": null,
+        "os_flavor": "ubuntu",
+        "os_version": "24.04",
+        "rapid_deploy": false,
+        "protection": {
+          "delete": false
+        },
+        "deprecated": null,
+        "deprecation": null,
+        "deleted": null,
+        "labels": {
+          "environment": "prod",
+          "example.com/my": "label",
+          "just-a-key": ""
+        },
+        "architecture": "x86"
+      },
+      "iso": null,
+      "rescue_enabled": false,
+      "locked": false,
+      "backup_window": "22-02",
+      "outgoing_traffic": 123456,
+      "ingoing_traffic": 123456,
+      "included_traffic": 654321,
+      "protection": {
+        "delete": false,
+        "rebuild": false
+      },
+      "labels": {
+        "environment": "prod",
+        "example.com/my": "label",
+        "just-a-key": ""
+      },
+      "volumes": [],
+      "load_balancers": [],
+      "primary_disk_size": 80,
+      "placement_group": null
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "per_page": 50,
+      "previous_page": null,
+      "next_page": null,
+      "last_page": 1,
+      "total_entries": 1
+    }
+  }
+}

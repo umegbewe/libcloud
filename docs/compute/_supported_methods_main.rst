@@ -22,6 +22,7 @@ Provider                       list nodes create node reboot node destroy node s
 `Google Compute Engine`_       yes        yes         yes         yes          yes        yes       yes         yes        yes        
 `GiG G8 Node Provider`_        yes        yes         yes         yes          yes        yes       yes         yes        no         
 `Gridscale`_                   yes        yes         yes         yes          yes        no        yes         no         yes        
+`Hetzner Cloud`_               yes        yes         yes         yes          yes        yes       yes         yes        yes
 `Ikoula`_                      yes        yes         yes         yes          no         no        yes         yes        yes        
 `InternetSolutions`_           yes        yes         yes         yes          yes        yes       yes         yes        yes        
 `Kamatera`_                    yes        yes         yes         yes          yes        yes       yes         yes        yes        
@@ -72,6 +73,7 @@ Provider                       list nodes create node reboot node destroy node s
 .. _`Google Compute Engine`: https://cloud.google.com/
 .. _`GiG G8 Node Provider`: https://gig.tech
 .. _`Gridscale`: https://gridscale.io
+.. _`Hetzner Cloud`: https://www.hetzner.com/cloud
 .. _`Ikoula`: http://express.ikoula.co.uk/cloudstack
 .. _`InternetSolutions`: http://www.is.co.za/
 .. _`Kamatera`: https://www.kamatera.com/

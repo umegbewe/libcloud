@@ -1,0 +1,55 @@
+{
+  "server_types": [
+    {
+      "id": 1,
+      "name": "cpx22",
+      "description": "CPX22",
+      "cores": 2,
+      "memory": 4,
+      "disk": 80,
+      "deprecated": false,
+      "prices": [
+        {
+          "location": "fsn1",
+          "price_hourly": {
+            "net": "0.008",
+            "gross": "0.00952"
+          },
+          "price_monthly": {
+            "net": "5.0",
+            "gross": "5.95"
+          },
+          "included_traffic": 20000000000000,
+          "price_per_tb_traffic": {
+            "net": "1.0",
+            "gross": "1.19"
+          }
+        }
+      ],
+      "storage_type": "local",
+      "cpu_type": "shared",
+      "category": "Shared vCPU",
+      "architecture": "x86",
+      "deprecation": null,
+      "locations": [
+        {
+          "id": 1,
+          "name": "fsn1",
+          "deprecation": null,
+          "recommended": true,
+          "available": true
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "page": 1,
+      "per_page": 50,
+      "previous_page": null,
+      "next_page": null,
+      "last_page": 1,
+      "total_entries": 1
+    }
+  }
+}

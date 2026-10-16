@@ -22,6 +22,7 @@ Provider                       list volumes create volume destroy volume attach 
 `Google Compute Engine`_       yes          yes           yes            yes           yes           yes            yes            
 `GiG G8 Node Provider`_        yes          yes           yes            yes           yes           no             no             
 `Gridscale`_                   yes          yes           yes            yes           yes           yes            yes            
+`Hetzner Cloud`_               yes          yes           yes            yes           yes           no             no
 `Ikoula`_                      yes          yes           yes            yes           yes           no             yes            
 `InternetSolutions`_           no           no            no             no            no            no             no             
 `Kamatera`_                    no           no            no             no            no            no             no             
@@ -72,6 +73,7 @@ Provider                       list volumes create volume destroy volume attach 
 .. _`Google Compute Engine`: https://cloud.google.com/
 .. _`GiG G8 Node Provider`: https://gig.tech
 .. _`Gridscale`: https://gridscale.io
+.. _`Hetzner Cloud`: https://www.hetzner.com/cloud
 .. _`Ikoula`: http://express.ikoula.co.uk/cloudstack
 .. _`InternetSolutions`: http://www.is.co.za/
 .. _`Kamatera`: https://www.kamatera.com/

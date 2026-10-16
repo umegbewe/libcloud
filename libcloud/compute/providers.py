@@ -40,6 +40,7 @@ DRIVERS = {
         "CloudSigmaNodeDriver",
     ),
     Provider.GCE: ("libcloud.compute.drivers.gce", "GCENodeDriver"),
+    Provider.HETZNER: ("libcloud.compute.drivers.hetzner", "HetznerNodeDriver"),
     Provider.RACKSPACE: ("libcloud.compute.drivers.rackspace", "RackspaceNodeDriver"),
     Provider.RACKSPACE_FIRST_GEN: (
         "libcloud.compute.drivers.rackspace",

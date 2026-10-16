@@ -22,6 +22,7 @@ Provider                       list images get image create image delete image c
 `Google Compute Engine`_       yes         no        no           no           no        
 `GiG G8 Node Provider`_        yes         no        no           no           no        
 `Gridscale`_                   yes         yes       yes          yes          no        
+`Hetzner Cloud`_               yes         yes       no           no           no
 `Ikoula`_                      yes         no        no           no           no        
 `InternetSolutions`_           yes         no        no           no           no        
 `Kamatera`_                    yes         no        no           no           no        
@@ -72,6 +73,7 @@ Provider                       list images get image create image delete image c
 .. _`Google Compute Engine`: https://cloud.google.com/
 .. _`GiG G8 Node Provider`: https://gig.tech
 .. _`Gridscale`: https://gridscale.io
+.. _`Hetzner Cloud`: https://www.hetzner.com/cloud
 .. _`Ikoula`: http://express.ikoula.co.uk/cloudstack
 .. _`InternetSolutions`: http://www.is.co.za/
 .. _`Kamatera`: https://www.kamatera.com/
